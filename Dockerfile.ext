@@ -1,0 +1,11 @@
+# Estende a imagem oficial do Liferay
+FROM liferay/portal:7.3.5-ga6
+
+# Adiciona arquivos de deploy (módulos ou temas)
+COPY ./deploy /opt/liferay/deploy
+
+# Configurações adicionais (opcional)
+RUN echo "Configurações extras podem ser aplicadas aqui."
+
+# Expõe a porta padrão do Liferay
+EXPOSE 8080

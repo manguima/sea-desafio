@@ -1,0 +1,39 @@
+version: "3"
+services:
+  liferay:
+    build:
+      context: .
+      dockerfile: Dockerfile.ext
+    container_name: liferay-container
+    environment:
+      - LIFERAY_JDBC_DRIVER_CLASSNAME=com.mysql.cj.jdbc.Driver
+      - LIFERAY_JDBC_URL=jdbc:mysql://mysql:3306/lportal?useSSL=false&serverTimezone=UTC
+      - LIFERAY_JDBC_USERNAME=liferay
+      - LIFERAY_JDBC_PASSWORD=liferay
+    ports:
+      - "8080:8080"
+    volumes:
+      - liferay-data:/opt/liferay/data
+      - ./modules:/opt/liferay/modules
+      - ./deploy:/opt/liferay/deploy
+    networks:
+      - liferay-network
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: liferay
+      MYSQL_DATABASE: lportal
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - liferay-network
+
+networks:
+  liferay-network:
+
+volumes:
+  liferay-data:
+  mysql-data:
