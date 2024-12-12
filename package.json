@@ -1,20 +1,51 @@
 {
   "name": "sea-desafio",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "liferay:deploy": "powershell -ExecutionPolicy Bypass -File ./setup-liferay-dev.ps1",
-    "services:start": "docker-compose up -d",
-    "services:stop": "docker-compose stop",
-    "services:down": "docker-compose down"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:prettier:check": "prettier --check .",
+    "lint:prettier:fix": "prettier --write .",
+    "lint:eslint:check": "next lint --dir .",
+    "commit": "cz",
+    "prepare": "husky"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types"
+    ]
+  },
   "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.2",
+    "antd": "^5.22.4",
+    "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "19.6.0",
+    "@commitlint/config-conventional": "19.6.0",
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "commitizen": "4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.0",
+    "eslint-config-prettier": "9.1.0",
+    "husky": "9.1.7",
+    "postcss": "^8",
+    "prettier": "3.4.2",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
