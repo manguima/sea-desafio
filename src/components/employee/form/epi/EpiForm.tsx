@@ -1,4 +1,4 @@
-import { FieldArray, FormikFormProps, FormikProps, FormikValues } from "formik";
+import { FieldArray } from "formik";
 import { Flex, Row, Col, Button, Checkbox, Typography } from "antd"; // ajuste conforme suas importações
 
 import styles from "../form-employee.module.css";

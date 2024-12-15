@@ -1,5 +1,5 @@
 "use client";
-import { Flex, Typography } from "antd";
+import { Flex } from "antd";
 import { useState } from "react";
 
 import styles from "./checkbox-employee.module.css";

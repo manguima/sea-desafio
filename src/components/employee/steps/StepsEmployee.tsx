@@ -26,7 +26,7 @@ const StepItem = ({ num }: { num: number }) => {
 
   const title = `Item ${num + 1}`;
 
-  const { stepCurrent, setStepCurrent } = useEmployeeContext();
+  const { stepCurrent } = useEmployeeContext();
 
   return (
     <Flex className={styles.item}>

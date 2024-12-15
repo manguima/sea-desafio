@@ -1,5 +1,5 @@
 "use client";
-import { Card, Flex, Typography } from "antd";
+import { Flex, Typography } from "antd";
 import { UserProfileIcon } from "@/src/assets/user-profile-icon";
 
 import styles from "./desc-employee.module.css";

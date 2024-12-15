@@ -55,14 +55,8 @@ export const ListEmployee = () => {
         </Flex>
       </Flex>
       <Flex className={styles.listEmployee}>
-        {employees.map((employee, index) => {
-          return (
-            <ListItemEmployee
-              key={employee.id}
-              employee={employee}
-              num={index}
-            />
-          );
+        {employees.map((employee) => {
+          return <ListItemEmployee key={employee.id} employee={employee} />;
         })}
       </Flex>
       <Flex className={styles.status}>

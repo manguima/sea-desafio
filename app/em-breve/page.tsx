@@ -1,9 +1,11 @@
 import { Shortly } from "@/src/components/default/shortly/Shortly";
 
-export default () => {
+const ShortlyPage = () => {
   return (
     <div>
       <Shortly />
     </div>
   );
 };
+
+export default ShortlyPage;

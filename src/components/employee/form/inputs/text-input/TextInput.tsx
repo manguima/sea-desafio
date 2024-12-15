@@ -12,7 +12,6 @@ interface InputProps {
   placeholder?: string;
   mask?: string;
   max?: number;
-  className?: string;
 }
 
 const TextInput: React.FC<InputProps> = ({
@@ -22,7 +21,6 @@ const TextInput: React.FC<InputProps> = ({
   placeholder = "Digite aqui...",
   max,
   mask,
-  className = "",
 }) => {
   const inputRef = useRef<HTMLInputElement | undefined>(undefined); // Criando o ref com useRef
 

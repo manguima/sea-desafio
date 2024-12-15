@@ -8,13 +8,7 @@ import { Employee } from "@/src/types/FormEmployeeProps";
 import { jobPositionsList } from "@/src/config/job";
 import Link from "next/link";
 
-export const ListItemEmployee = ({
-  num,
-  employee,
-}: {
-  num: number;
-  employee: Employee;
-}) => {
+export const ListItemEmployee = ({ employee }: { employee: Employee }) => {
   const { Text } = Typography;
 
   return (

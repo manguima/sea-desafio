@@ -10,7 +10,7 @@ import { menuItems } from "@/src/config/menu";
 
 const items = menuItems;
 
-export default () => {
+const Navbar = () => {
   const [current, setCurrent] = useState("enterprise");
 
   const onClick = (e: string) => {
@@ -38,7 +38,7 @@ export default () => {
       <div className={styles.logo}></div>
       {items
         .filter((item) => item.view)
-        .map((item, index) => {
+        .map((item) => {
           const Icon: any = item.icon || <BellIcon />;
           const Badge = item.badge || null;
           return (
@@ -49,7 +49,7 @@ export default () => {
                   ? `${styles.button} ${styles.active}`
                   : styles.button
               }
-              onClick={(e) => onClick(item.key)}
+              onClick={() => onClick(item.key)}
               href={item.href}
             >
               <div className={styles.btn}>
@@ -67,3 +67,5 @@ export default () => {
     </Flex>
   );
 };
+
+export default Navbar;
