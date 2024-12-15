@@ -1,31 +1,62 @@
 {
   "employees": [
     {
-      "id": "c28e",
-      "status": false,
+      "status": true,
       "name": "Matheus Guimarães",
       "gender": "male",
-      "cpf": "068.906.191-96",
-      "birth": "23/07/1999",
+      "cpf": "222.222.222-22",
+      "birth": "22/22/2222",
       "rg": "2222222",
-      "job": "machine_operator",
+      "job": "bricklayer",
       "epi": false,
       "epi_list": [
         {
-          "activity": "electricity",
+          "activity": "laboratory",
           "epi_items": [
             {
-              "epi_type": "safety_helmet",
-              "ca_num": 2222
+              "epi_type": "safety_belt",
+              "ca_num": 2323
             },
             {
               "epi_type": "hearing_protector",
-              "ca_num": 2233
+              "ca_num": 2242
+            },
+            {
+              "epi_type": "respiratory_mask",
+              "ca_num": 1111
             }
           ]
         }
       ],
-      "health_certificate": {}
+      "health_certificate": null,
+      "id": "3e93"
+    },
+    {
+      "id": "b1e0",
+      "status": false,
+      "name": "Matheus Pederreira",
+      "gender": "male",
+      "cpf": "112.412.312-32",
+      "birth": "11/22/2111",
+      "rg": "2321312321",
+      "job": "driver",
+      "epi": false,
+      "epi_list": [
+        {
+          "activity": "heavy_machinery_operation",
+          "epi_items": [
+            {
+              "epi_type": "respiratory_mask",
+              "ca_num": 23322
+            },
+            {
+              "epi_type": "safety_boots",
+              "ca_num": 31229
+            }
+          ]
+        }
+      ],
+      "health_certificate": null
     }
   ]
 }

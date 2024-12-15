@@ -27,11 +27,14 @@ const EpiForm = ({
         style={{ justifyContent: "start", gap: "8px" }}
         className={`${styles.status}`}
       >
-        <Checkbox onChange={() => setFieldValue("epi", !values.epi)} />
+        <Checkbox
+          checked={values.epi ? true : false}
+          onChange={() => setFieldValue("epi", !values?.epi)}
+        />
         <Text className={styles.text}>O trabalhador não usa EPI.</Text>
       </Flex>
 
-      {!values.epi && (
+      {!values?.epi && (
         <FieldArray
           name="epi_list"
           render={(arrayHelpers) => (
@@ -43,7 +46,7 @@ const EpiForm = ({
                 flexDirection: "column",
               }}
             >
-              {values.epi_list.map((activity, index) => (
+              {values?.epi_list.map((activity, index) => (
                 <Flex vertical className={styles.box} key={index}>
                   <Row>
                     <Col span={24}>
