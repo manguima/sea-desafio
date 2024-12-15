@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# SEA DESAFIO
 
-First, run the development server:
+Espero que esteja lendo este README
+
+
+## 📦 Como usar e instalar
+
+Siga as etapas abaixo para configurar o projeto em sua máquina local:
+
+1. Clone o repositório
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/manguima/sea-desafio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Entre no diretório do projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd sea-desafio
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Instale as dependências
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Inicie o ambiente de desenvolvimento
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🚀 Principais Tecnologias
+Este projeto utiliza as seguintes tecnologias e ferramentas:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- React com Next.js
+- Ant Design para a interface de usuário
+- Redux Toolkit para gerenciamento de estado
+- JSON Server como API simulada
+- TailwindCSS para estilização
+- TypeScript para tipagem estática
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 📂 Estrutura de pastas usada
+
+### Você moraria em um prédio que não tem uma boa fundação ?
+
+Adotei a estrutura de pastas do próprio Next, acredito que é uma ótima opção para todo tipo de Framework ou linguagem, onde o diretório app/ organiza as rotas de forma declarativa e modular. Cada subpasta no app/ representa uma rota, com arquivos como layout.tsx para layouts compartilhados e page.tsx para páginas individuais. Rotas dinâmicas, como [id], permitem criar páginas baseadas em parâmetros. Essa organização facilita a criação de hierarquias de rotas e reaproveitamento de layouts, tornando o desenvolvimento mais eficiente e intuitivo.
+
+Complementando o app/, o diretório src/ centraliza a lógica e recursos reutilizáveis, como chamadas de API, componentes, hooks personalizados e gerenciamento de estado com Redux.
+
+Arquivos de configuração (.env, package.json, etc.) e o diretório public/ para recursos estáticos completam a estrutura, que é projetada para ser escalável e fácil de manter, permitindo adicionar novas funcionalidades sem comprometer a organização geral do projeto.
+
+Estrtura resumida:
+
+```
+sea-desafio/
+├── app/                          # Diretório principal do App Router
+│   ├── em-breve/                 # Página "/em-breve"
+│   ├── funcionario/              # Rota "/funcionario"
+│   │   ├── adiciona/             # Página "/funcionario/adiciona"
+│   │   ├── lista/                # Página "/funcionario/lista"
+│   │   └── [id]/                 # Rota dinâmica "/funcionario/:id"
+├── src/                          # Lógica do aplicativo e componentes
+│   ├── api/                      # Chamadas de API
+│   ├── components/               # Componentes reutilizáveis
+│   │   ├── default/              # Componentes genéricos
+│   │   └── employee/             # Componentes específicos para funcionários
+│   ├── redux/                    # Gerenciamento de estado com Redux
+│   ├── hooks/                    # Hooks personalizados
+│   ├── styles/                   # Arquivos de estilo global
+│   └── types/                    # Tipos TypeScript compartilhados
+├── public/                       # Arquivos públicos (imagens, ícones)
+├── .github/                      # Configuração de workflows do GitHub
+├── .husky/                       # Configuração de hooks do Git
+├── .env                          # Variáveis de ambiente
+├── package.json                  # Dependências e scripts do projeto
+└── tsconfig.json                 # Configuração do TypeScript
+```
