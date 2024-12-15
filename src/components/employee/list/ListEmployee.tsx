@@ -19,6 +19,16 @@ export const ListEmployee = () => {
 
   const { setStepApproved, totalSteps } = useEmployeeContext();
 
+  const [filtered, setFiltered] = useState(false);
+
+  const handleTrueFiltered = () => {
+    return setFiltered(true);
+  };
+
+  const handleFalseFiltered = () => {
+    return setFiltered(false);
+  };
+
   const [isChecked, setIsChecked] = useState(false);
 
   // UseEffect para carregar os funcionários quando o componente for montado
@@ -40,10 +50,20 @@ export const ListEmployee = () => {
         </Button>
         <Flex className={styles.row}>
           <Flex className={styles.subOptions}>
-            <Button className={`${styles.btn} ${styles.viewMore}`}>
+            <Button
+              onClick={handleTrueFiltered}
+              className={
+                filtered ? `${styles.btn} ${styles.active}` : styles.btn
+              }
+            >
               Ver apenas ativos
             </Button>
-            <Button className={`${styles.btn} ${styles.clearFilter}`}>
+            <Button
+              onClick={handleFalseFiltered}
+              className={
+                !filtered ? `${styles.btn} ${styles.active}` : styles.btn
+              }
+            >
               Limpar filtros
             </Button>
           </Flex>
@@ -55,9 +75,11 @@ export const ListEmployee = () => {
         </Flex>
       </Flex>
       <Flex className={styles.listEmployee}>
-        {employees.map((employee) => {
-          return <ListItemEmployee key={employee.id} employee={employee} />;
-        })}
+        {employees
+          .filter((item) => (filtered ? item.status : item))
+          .map((employee) => {
+            return <ListItemEmployee key={employee.id} employee={employee} />;
+          })}
       </Flex>
       <Flex className={styles.status}>
         <Text className={styles.text}>A etapa está concluída?</Text>

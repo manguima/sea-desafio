@@ -53,6 +53,10 @@
         gap: 15px;
         .btn {
           height: 33px;
+          &.active {
+            border-color: var(--ant-color-text);
+            color: var(--ant-color-text);
+          }
         }
       }
     }
