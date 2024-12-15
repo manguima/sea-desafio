@@ -77,3 +77,18 @@ sea-desafio/
 ├── package.json                  # Dependências e scripts do projeto
 └── tsconfig.json                 # Configuração do TypeScript
 ```
+
+## 🧠 Decisões Técnicas
+
+1. Uso do Redux com Slices e ApiWorker
+   Implementei o Redux para gerenciar o estado global, organizando os dados em slices. Além disso, desenvolvi um ApiWorker, localizado na pasta src/api, para centralizar a comunicação com o JSON Server. Isso facilita a integração com outras APIs no futuro.
+
+2. Organização de Arquivos por Limite de Linhas
+   Acredito que arquivos extensos tornam a manutenção mais difícil. Assim, estabeleci a regra de que arquivos com mais de 200 linhas devem ser divididos em partes menores e mais específicas.
+
+3. Validação de Commits e Código
+   Para manter o projeto limpo e organizado, configurei as seguintes ferramentas:
+
+Prettier para formatação de código.
+ESLint para validação de boas práticas.
+Commitizen e Husky para padronização de commits com mensagens claras e bem definidas.
