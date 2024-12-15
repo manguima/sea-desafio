@@ -29,7 +29,7 @@ export const FormEmployee = () => {
   const dispatch = useAppDispatch();
 
   let currentEmployee = useAppSelector(
-    (state) => state.employees.currentEmployee ?? null
+    (state) => state.employees.currentEmployee ?? null,
   );
 
   const [initialValues, setInitialValues] = useState<Employee>({
