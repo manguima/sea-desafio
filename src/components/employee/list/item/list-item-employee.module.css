@@ -44,3 +44,11 @@
     }
   }
 }
+
+.popover {
+  .btn {
+    width: 100%;
+    border: unset;
+    box-shadow: unset;
+  }
+}

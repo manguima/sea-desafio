@@ -1,31 +1,3 @@
 {
-  "employees": [
-    {
-      "id": "c28e",
-      "status": false,
-      "name": "Matheus Guimarães",
-      "gender": "male",
-      "cpf": "068.906.191-96",
-      "birth": "23/07/1999",
-      "rg": "2222222",
-      "job": "machine_operator",
-      "epi": false,
-      "epi_list": [
-        {
-          "activity": "electricity",
-          "epi_items": [
-            {
-              "epi_type": "safety_helmet",
-              "ca_num": 2222
-            },
-            {
-              "epi_type": "hearing_protector",
-              "ca_num": 2233
-            }
-          ]
-        }
-      ],
-      "health_certificate": {}
-    }
-  ]
+  "employees": []
 }
