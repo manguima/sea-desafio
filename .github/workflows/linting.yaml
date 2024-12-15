@@ -28,7 +28,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run lint:eslint:check
+      - run: npx next lint --dir .
 
   commitlint:
     name: Commit Lint
