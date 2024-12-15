@@ -75,6 +75,24 @@ export const FormEmployee = () => {
         ],
         health_certificate: currentEmployee?.health_certificate ?? null,
       });
+    } else {
+      setInitialValues({
+        status: false,
+        name: "",
+        gender: "male",
+        cpf: "",
+        birth: "",
+        rg: "",
+        job: "",
+        epi: false,
+        epi_list: [
+          {
+            activity: "",
+            epi_items: [{ epi_type: "", ca_num: "" }],
+          },
+        ],
+        health_certificate: null,
+      });
     }
   }, [currentEmployee]);
 
