@@ -17,7 +17,7 @@ export const validationSchema = Yup.object({
       activity: Yup.string(),
       epi_type: Yup.string(),
       ca_num: Yup.number().max(9999, "O CA deve ter até 4 dígitos."),
-    })
+    }),
   ),
   health_certificate: Yup.mixed().nullable(),
 });

@@ -3,7 +3,7 @@ const BASE_URL: string =
 
 const apiWorker = async <T>(
   endpoint: string,
-  options: RequestInit = {}
+  options: RequestInit = {},
 ): Promise<T> => {
   const response = await fetch(`${BASE_URL}/${endpoint}`, options);
 

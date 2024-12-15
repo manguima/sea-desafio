@@ -29,7 +29,7 @@ export const FormEmployee = () => {
   const dispatch = useAppDispatch();
 
   const currentEmployee = useAppSelector(
-    (state) => state.employees.employees.find((emp) => emp.id === id) ?? null
+    (state) => state.employees.employees.find((emp) => emp.id === id) ?? null,
   );
 
   const initialValues: Employee = {

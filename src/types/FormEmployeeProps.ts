@@ -25,5 +25,5 @@ export type Employee = {
 export type SetFieldValue = <Employee>(
   field: string,
   value: Employee | any,
-  shouldValidate?: boolean
+  shouldValidate?: boolean,
 ) => void;

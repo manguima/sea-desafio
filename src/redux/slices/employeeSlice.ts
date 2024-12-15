@@ -21,14 +21,14 @@ export const fetchEmployees = createAsyncThunk<Employee[]>(
   "employees/fetchEmployees",
   async () => {
     return await apiWorker<Employee[]>("employees");
-  }
+  },
 );
 
 export const fetchEmployeeById = createAsyncThunk<Employee, string>(
   "employees/fetchEmployeeById",
   async (id) => {
     return await apiWorker<Employee>(`employees/${id}`);
-  }
+  },
 );
 
 export const addEmployee = createAsyncThunk<Employee, Employee>(
@@ -41,7 +41,7 @@ export const addEmployee = createAsyncThunk<Employee, Employee>(
       },
       body: JSON.stringify(newEmployee),
     });
-  }
+  },
 );
 
 export const updateEmployee = createAsyncThunk<Employee, Employee>(
@@ -57,7 +57,7 @@ export const updateEmployee = createAsyncThunk<Employee, Employee>(
       },
       body: JSON.stringify(data),
     });
-  }
+  },
 );
 
 export const deleteEmployee = createAsyncThunk<void, string>(
@@ -66,7 +66,7 @@ export const deleteEmployee = createAsyncThunk<void, string>(
     await apiWorker<void>(`employees/${id}`, {
       method: "DELETE",
     });
-  }
+  },
 );
 
 // Slice
@@ -86,7 +86,7 @@ const employeeSlice = createSlice({
         (state, action: PayloadAction<Employee[]>) => {
           state.employees = action.payload;
           state.loading = false;
-        }
+        },
       )
       .addCase(fetchEmployees.rejected, (state, action) => {
         state.loading = false;
@@ -102,7 +102,7 @@ const employeeSlice = createSlice({
         (state, action: PayloadAction<Employee>) => {
           state.currentEmployee = action.payload;
           state.loading = false;
-        }
+        },
       )
       .addCase(fetchEmployeeById.rejected, (state, action) => {
         state.loading = false;
@@ -113,24 +113,24 @@ const employeeSlice = createSlice({
         addEmployee.fulfilled,
         (state, action: PayloadAction<Employee>) => {
           state.employees.push(action.payload);
-        }
+        },
       )
       // Update Employee
       .addCase(
         updateEmployee.fulfilled,
         (state, action: PayloadAction<Employee>) => {
           const index = state.employees.findIndex(
-            (emp) => emp.id === action.payload.id
+            (emp) => emp.id === action.payload.id,
           );
           if (index !== -1) {
             state.employees[index] = action.payload;
           }
-        }
+        },
       )
       // Delete Employee
       .addCase(deleteEmployee.fulfilled, (state, action) => {
         state.employees = state.employees.filter(
-          (emp) => emp.id !== action.meta.arg
+          (emp) => emp.id !== action.meta.arg,
         );
       });
   },
