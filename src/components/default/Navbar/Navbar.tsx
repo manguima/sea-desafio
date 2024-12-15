@@ -22,10 +22,10 @@ const Navbar = () => {
   useEffect(() => {
     const currentHref =
       menuItems.find((item) => {
-        pathname.split("/")[1] === item.href.split("/")[1];
+        if (pathname.split("/")[1] == item.href.split("/")[1]) return item;
       })?.key || "enterprise";
     setCurrent(currentHref);
-  }, []);
+  }, [pathname]);
 
   return (
     <Flex

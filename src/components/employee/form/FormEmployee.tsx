@@ -13,7 +13,7 @@ import { jobPositionsList } from "@/src/config/job";
 import FileInput from "./inputs/file-input/FileInput";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation"; // Para capturar o ID da URL
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   addEmployee,
   fetchEmployeeById,
@@ -28,11 +28,11 @@ export const FormEmployee = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
 
-  const currentEmployee = useAppSelector(
-    (state) => state.employees.employees.find((emp) => emp.id === id) ?? null,
+  let currentEmployee = useAppSelector(
+    (state) => state.employees.currentEmployee ?? null,
   );
 
-  const initialValues: Employee = {
+  const [initialValues, setInitialValues] = useState<Employee>({
     status: currentEmployee?.status ?? false,
     name: currentEmployee?.name ?? "",
     gender: currentEmployee?.gender ?? "male",
@@ -48,14 +48,35 @@ export const FormEmployee = () => {
       },
     ],
     health_certificate: currentEmployee?.health_certificate ?? null,
-  };
+  });
 
-  // Carrega os dados do funcionário ao montar o componente, se estiver editando
   useEffect(() => {
     if (id) {
       dispatch(fetchEmployeeById(id as string));
     }
   }, [id, dispatch]);
+
+  useEffect(() => {
+    if (id) {
+      setInitialValues({
+        status: currentEmployee?.status ?? false,
+        name: currentEmployee?.name ?? "",
+        gender: currentEmployee?.gender ?? "male",
+        cpf: currentEmployee?.cpf ?? "",
+        birth: currentEmployee?.birth ?? "",
+        rg: currentEmployee?.rg ?? "",
+        job: currentEmployee?.job ?? "",
+        epi: currentEmployee?.epi ?? false,
+        epi_list: currentEmployee?.epi_list ?? [
+          {
+            activity: "",
+            epi_items: [{ epi_type: "", ca_num: "" }],
+          },
+        ],
+        health_certificate: currentEmployee?.health_certificate ?? null,
+      });
+    }
+  }, [currentEmployee]);
 
   const handleSubmit = async (values: Employee) => {
     const idValue = (id as string) || null;
@@ -88,7 +109,7 @@ export const FormEmployee = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          enableReinitialize // Permite reativar os valores ao editar
+          enableReinitialize
           onSubmit={handleSubmit}
         >
           {({ values, setFieldValue }) => (

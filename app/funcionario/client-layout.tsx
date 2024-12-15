@@ -32,7 +32,6 @@ export default function ClientLayout({
             gap: "var(--layout-gap)",
           }}
         >
-          <DescEmployee />
           {children}
         </Flex>
         <NextAndPrevEmployee />
