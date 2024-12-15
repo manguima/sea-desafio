@@ -10,7 +10,7 @@ export const menuItems = [
   {
     key: "enterprise",
     icon: EnterpriseIcon,
-    href: "/em-breve",
+    href: "/",
     view: true,
   },
   {
