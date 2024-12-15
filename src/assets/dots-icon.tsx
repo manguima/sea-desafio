@@ -1,9 +1,13 @@
 import { IconProps } from "../types/IconProps";
 
-export const DotsIcon = ({ bg = "white" }: IconProps) => (
+export const DotsIcon = ({
+  bg = "white",
+  w = "100%",
+  h = "100%",
+}: IconProps) => (
   <svg
-    width="16"
-    height="5"
+    width={w}
+    height={h}
     viewBox="0 0 16 5"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

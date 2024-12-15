@@ -1,0 +1,17 @@
+export const activitiesList = [
+  { label: "Construção Civil", value: "civil_construction" },
+  { label: "Soldagem", value: "welding" },
+  { label: "Eletricidade", value: "electricity" },
+  { label: "Trabalho em Altura", value: "working_at_height" },
+  { label: "Manuseio de Produtos Químicos", value: "chemical_handling" },
+  { label: "Operação de Máquinas Pesadas", value: "heavy_machinery_operation" },
+  { label: "Laboratório", value: "laboratory" },
+  { label: "Limpeza Industrial", value: "industrial_cleaning" },
+  { label: "Transporte de Cargas", value: "cargo_transportation" },
+  { label: "Segurança Patrimonial", value: "security_guard" },
+  { label: "Mineração", value: "mining" },
+  { label: "Manutenção Industrial", value: "industrial_maintenance" },
+  { label: "Agricultura", value: "agriculture" },
+  { label: "Atendimento em Saúde", value: "healthcare" },
+  { label: "Indústria Alimentícia", value: "food_industry" },
+];

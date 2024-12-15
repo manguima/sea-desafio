@@ -1,9 +1,13 @@
 import { IconProps } from "../types/IconProps";
 
-export const TimeLoopIcon = ({ bg = "#649FBF" }: IconProps) => (
+export const TimeLoopIcon = ({
+  bg = "#649FBF",
+  w = "100%",
+  h = "100%",
+}: IconProps) => (
   <svg
-    width="17"
-    height="18"
+    width={w}
+    height={h}
     viewBox="0 0 17 18"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
