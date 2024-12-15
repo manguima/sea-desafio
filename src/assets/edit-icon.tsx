@@ -1,9 +1,13 @@
 import { IconProps } from "../types/IconProps";
 
-export const EditIcon = ({ bg = "#649FBF" }: IconProps) => (
+export const EditIcon = ({
+  bg = "#649FBF",
+  w = "100%",
+  h = "100%",
+}: IconProps) => (
   <svg
-    width="21"
-    height="18"
+    width={w}
+    height={h}
     viewBox="0 0 21 18"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
