@@ -12,7 +12,41 @@ import { deleteEmployee } from "@/src/redux/slices/employeeSlice";
 import { useModal } from "@/src/components/default/modal/Modal";
 
 export const ListItemEmployee = ({ employee }: { employee: Employee }) => {
-  const { Text } = Typography;
+  const { Text, Title } = Typography;
+
+  const dispatch = useAppDispatch();
+
+  const { showModal } = useModal();
+
+  const handleDeleteUser = () => {
+    // Disparar a ação para excluir o funcionário
+    dispatch(deleteEmployee(employee.id as string)).then(() => {
+      showModal({
+        title: "",
+        content: "Usuário excluído com sucesso!",
+        onOk: () => console.log("Confirmed"),
+        onCancel: () => console.log("Cancelled"),
+      });
+    });
+  };
+
+  const suboptions = (
+    <Flex vertical className={styles.popover}>
+      <Link href={`/funcionario/${employee.id}`}>
+        <Button style={{ background: "transparent" }} className={styles.btn}>
+          Editar
+        </Button>
+      </Link>
+      <Divider style={{ margin: "10px 0", padding: 0 }} />
+      <Button
+        onClick={handleDeleteUser}
+        style={{ background: "transparent" }}
+        className={styles.btn}
+      >
+        Excluir
+      </Button>
+    </Flex>
+  );
 
   const dispatch = useAppDispatch();
 
