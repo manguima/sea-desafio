@@ -6,25 +6,33 @@ Espero que esteja lendo este README
 
 Siga as etapas abaixo para configurar o projeto em sua máquina local:
 
-1. Clone o repositório
+1. Utilizar a versão node **v20.10.0**
+
+> Se tiver instalado nvm, use esse comando
+
+```bash
+  nvm i
+```
+
+2. Clone o repositório
 
 ```bash
   git clone https://github.com/manguima/sea-desafio
 ```
 
-2. Entre no diretório do projeto
+3. Entre no diretório do projeto
 
 ```bash
   cd sea-desafio
 ```
 
-3. Instale as dependências
+4. Instale as dependências
 
 ```bash
   npm install
 ```
 
-4. Inicie o ambiente de desenvolvimento
+5. Inicie o ambiente de desenvolvimento
 
 ```bash
   npm run dev
