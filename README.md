@@ -92,3 +92,7 @@ sea-desafio/
 Prettier para formatação de código.
 ESLint para validação de boas práticas.
 Commitizen e Husky para padronização de commits com mensagens claras e bem definidas.
+
+## O melhor é sempre no final... Aplicação White label.
+
+A aplicação é whitelabel, ou seja, pode personalizar facilmente para diferentes clientes. As configurações ficam na pasta src/config, onde consegue mudar o tema, ajustar o menu, e configurar coisas como atividades, cargos e EPIs. Isso deixa tudo mais fácil de adaptar.
