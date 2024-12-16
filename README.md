@@ -42,10 +42,12 @@ Este projeto utiliza as seguintes tecnologias e ferramentas:
 - TypeScript para tipagem estática
 
 ## ⭐ Destaques do desafio:
+
 - Utilizar React; ✅
 - Estar de acordo com o protótipo; ✅
 - Funcionar nos principais navegadores; ✅
 - Utilizar biblioteca de estilos; ✅
+- Responsividade mínima; ✅
 - Utilizar Redux; ✅
 - Criar link para todas as etapas e itens do menu; ❓(Eu redirecionei todos para pagina "em-breve").
 - Implementar comportamentos do formulário; ✅
