@@ -6,18 +6,18 @@ Espero que esteja lendo este README
 
 Siga as etapas abaixo para configurar o projeto em sua máquina local:
 
-1. Utilizar a versão node **v20.10.0**
+1. Clone o repositório
+
+```bash
+  git clone https://github.com/manguima/sea-desafio
+```
+
+2. Utilizar a versão node **v20.10.0**
 
 > Se tiver instalado nvm, use esse comando
 
 ```bash
   nvm i
-```
-
-2. Clone o repositório
-
-```bash
-  git clone https://github.com/manguima/sea-desafio
 ```
 
 3. Entre no diretório do projeto
